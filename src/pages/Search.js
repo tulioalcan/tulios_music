@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import Header from './Header';
 import Loading from './Loading';
@@ -33,7 +34,7 @@ class Search extends React.Component {
     }
   };
 
-  clearSearch = async () => {
+  clearAndShowSearch = async () => {
     this.setState({
       load: true,
     });
@@ -78,14 +79,32 @@ class Search extends React.Component {
             type="button"
             data-testid="search-artist-button"
             disabled={ isButtonDisabled }
-            onClick={ this.clearSearch }
+            onClick={ this.clearAndShowSearch }
           >
             Pesquisar
           </button>
           <section>
             {
               albuns.length >= 1 ? <h2>{`Resultado de álbuns de: ${artistName}`}</h2>
-                : <h2>null</h2>
+                : <h2>Nenhum álbum foi encontrado</h2>
+            }
+          </section>
+          <section>
+            {
+              albuns.map((albun) => (
+                <div key={ albun.artistId }>
+                  <img src={ albun.artworkUrl100 } alt={ albun.collectionName } />
+                  <h2>{ albun.collectionName }</h2>
+                  <h2>{ albun.artistName }</h2>
+                  <h2>{ albun.collectionPrice }</h2>
+                  <Link
+                    to={ `/album/${albun.collectionId}` }
+                    data-testid={ `link-to-album-${albun.collectionId}` }
+                  >
+                    select
+                  </Link>
+                </div>
+              ))
             }
           </section>
         </form>
