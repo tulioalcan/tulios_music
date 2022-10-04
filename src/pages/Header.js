@@ -31,7 +31,7 @@ class Header extends React.Component {
     } = this.state;
     return (
       <h1 data-testid="header-component">
-        Conteúdo Header
+        Header
         {load ? <Loading /> : <p data-testid="header-user-name">{`${user}`}</p>}
         <Link to="/search" data-testid="link-to-search">Search</Link>
         <Link to="/favorites" data-testid="link-to-favorites">Favorites</Link>
