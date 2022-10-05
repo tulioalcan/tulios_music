@@ -13,6 +13,7 @@ class Search extends React.Component {
       artist: '',
       albuns: [],
       artistName: '',
+      hasResult: true,
     };
   }
 
@@ -35,17 +36,26 @@ class Search extends React.Component {
   };
 
   clearAndShowSearch = async () => {
+    const { artist } = this.state;
     this.setState({
       load: true,
     });
-    const { artist } = this.state;
-    const arrayAlbum = await searchAlbumsAPI(artist);
-    this.setState({
-      load: false,
-      albuns: arrayAlbum,
-      artist: '',
-      artistName: artist,
-    });
+    await searchAlbumsAPI(artist).then(
+      (albuns) => {
+        this.setState({
+          load: false,
+          albuns,
+          artist: '',
+          artistName: artist,
+        }, () => {
+          if (albuns.length === 0) {
+            this.setState({ hasResult: false });
+          } else {
+            this.setState({ hasResult: true });
+          }
+        });
+      },
+    );
   };
 
   render() {
@@ -54,6 +64,7 @@ class Search extends React.Component {
       load,
       albuns,
       artistName,
+      hasResult,
     } = this.state;
     if (load) {
       return (
@@ -85,14 +96,13 @@ class Search extends React.Component {
           </button>
           <section>
             {
-              albuns.length >= 1 ? <h2>{`Resultado de álbuns de: ${artistName}`}</h2>
-                : <h2>Nenhum álbum foi encontrado</h2>
+              hasResult && (<h2>{`Resultado de álbuns de: ${artistName}`}</h2>)
             }
           </section>
           <section>
-            {
+            { hasResult ? (
               albuns.map((albun) => (
-                <div key={ albun.artistId }>
+                <div key={ albun.collectionId }>
                   <img src={ albun.artworkUrl100 } alt={ albun.collectionName } />
                   <h2>{ albun.collectionName }</h2>
                   <h2>{ albun.artistName }</h2>
@@ -104,8 +114,7 @@ class Search extends React.Component {
                     select
                   </Link>
                 </div>
-              ))
-            }
+              ))) : <h2>Nenhum álbum foi encontrado</h2>}
           </section>
         </form>
       </>
