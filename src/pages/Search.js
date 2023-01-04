@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import Header from './Header';
 import Loading from './Loading';
+import search from '../image/search.png';
+// import styles from '../styles/Search.module.css';
 
 class Search extends React.Component {
   constructor() {
@@ -72,9 +74,28 @@ class Search extends React.Component {
       );
     }
     return (
-      <>
-        <h1 data-testid="page-search">Conteúdo Search</h1>
-        <Header />
+      <div
+        className="search"
+        style={ {
+          display: 'flex',
+          height: '89vh',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          // alignItems: 'center',
+          background: `url(${search})`,
+          backgroundSize: 'cover',
+        } }
+      >
+        {/* <h1 data-testid="page-search">Conteúdo Search</h1> */}
+        <div
+          style={ {
+            margin: '60px',
+            marginTop: '90px',
+            color: 'black',
+          } }
+        >
+          <Header />
+        </div>
         <form>
           <label htmlFor="artist">
             <input
@@ -117,7 +138,7 @@ class Search extends React.Component {
               ))) : <h2>Nenhum álbum foi encontrado</h2>}
           </section>
         </form>
-      </>
+      </div>
     );
   }
 }

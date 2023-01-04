@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { createUser } from '../services/userAPI';
 import Loading from './Loading';
+import login from '../image/login.png';
+import styles from '../styles/Login.module.css';
 
 class Login extends React.Component {
   constructor() {
@@ -47,28 +49,53 @@ class Login extends React.Component {
     } = this.state;
 
     return (
-      <form data-testid="page-login">
-        User
-        <label htmlFor="LoginButton">
-          <input
-            data-testid="login-name-input"
-            name="user"
-            type="text"
-            id="user"
-            placeholder="User Name"
-            onChange={ this.onInputChange }
-          />
-        </label>
-        <button
-          type="button"
-          data-testid="login-submit-button"
-          disabled={ isButtonDisabled }
-          onClick={ this.saveUser }
+      <div
+        className="login"
+        style={ {
+          display: 'flex',
+          height: '89vh',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          // alignItems: 'center',
+          background: `url(${login})`,
+          backgroundSize: 'cover',
+        } }
+      >
+        <form
+          data-testid="page-login"
+          style={ {
+            margin: '120px',
+            marginTop: '300px',
+            fontSize: '40px',
+            color: '#8B008B',
+          } }
         >
-          Entrar
-        </button>
-        {load && <Loading />}
-      </form>
+          Usuário
+          <label htmlFor="LoginButton">
+            <br />
+            <input
+              className={ styles.inputs }
+              data-testid="login-name-input"
+              name="user"
+              type="text"
+              id="user"
+              placeholder="User Name"
+              onChange={ this.onInputChange }
+            />
+          </label>
+          <br />
+          <button
+            className={ styles.button }
+            type="button"
+            data-testid="login-submit-button"
+            disabled={ isButtonDisabled }
+            onClick={ this.saveUser }
+          >
+            Entrar
+          </button>
+          {load && <Loading />}
+        </form>
+      </div>
     );
   }
 }
