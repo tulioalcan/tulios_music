@@ -4,7 +4,7 @@ import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import Header from './Header';
 import Loading from './Loading';
 import search from '../image/search.png';
-// import styles from '../styles/Search.module.css';
+import styles from '../styles/Search.module.css';
 
 class Search extends React.Component {
   constructor() {
@@ -87,18 +87,10 @@ class Search extends React.Component {
         } }
       >
         {/* <h1 data-testid="page-search">Conteúdo Search</h1> */}
-        <div
-          style={ {
-            margin: '60px',
-            marginTop: '90px',
-            color: 'black',
-          } }
-        >
-          <Header />
-        </div>
         <form>
-          <label htmlFor="artist">
+          <label htmlFor="artist" className={ styles.label }>
             <input
+              className={ styles.inputs }
               data-testid="search-artist-input"
               name="artist"
               type="text"
@@ -115,19 +107,19 @@ class Search extends React.Component {
           >
             Pesquisar
           </button>
-          <section>
+          <section className={ styles.section }>
             {
               hasResult && (<h2>{`Resultado de álbuns de: ${artistName}`}</h2>)
             }
           </section>
-          <section>
+          <section className={ styles.section2 }>
             { hasResult ? (
               albuns.map((albun) => (
                 <div key={ albun.collectionId }>
                   <img src={ albun.artworkUrl100 } alt={ albun.collectionName } />
-                  <h2>{ albun.collectionName }</h2>
-                  <h2>{ albun.artistName }</h2>
-                  <h2>{ albun.collectionPrice }</h2>
+                  {/* <h2>{ albun.collectionName }</h2> */}
+                  {/* <h2>{ albun.artistName }</h2> */}
+                  {/* <h2>{ albun.collectionPrice }</h2> */}
                   <Link
                     to={ `/album/${albun.collectionId}` }
                     data-testid={ `link-to-album-${albun.collectionId}` }
@@ -138,6 +130,15 @@ class Search extends React.Component {
               ))) : <h2>Nenhum álbum foi encontrado</h2>}
           </section>
         </form>
+        <div
+          style={ {
+            margin: '60px',
+            marginTop: '0px',
+            color: 'black',
+          } }
+        >
+          <Header />
+        </div>
       </div>
     );
   }

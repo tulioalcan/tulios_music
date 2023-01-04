@@ -41,7 +41,7 @@ class Header extends React.Component {
           style={ { textDecoration: 'none', color: 'black' } }
           data-testid="link-to-search"
         >
-          <HiSearchCircle />
+          <HiSearchCircle style={ { fontSize: '30px' } } />
           Pesquisar
         </Link>
         <br />
@@ -51,7 +51,7 @@ class Header extends React.Component {
           style={ { textDecoration: 'none', color: 'black' } }
           data-testid="link-to-favorites"
         >
-          <MdFavorite />
+          <MdFavorite style={ { fontSize: '30px' } } />
           Favoritas
         </Link>
         <br />
@@ -61,10 +61,9 @@ class Header extends React.Component {
           style={ { textDecoration: 'none', color: 'black' } }
           data-testid="link-to-profile"
         >
-          <FaUserAlt />
+          <FaUserAlt style={ { fontSize: '28px' } } />
           Perfil
         </Link>
-        <br />
         <br />
         {
           load ? <Loading />
