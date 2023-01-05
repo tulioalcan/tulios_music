@@ -1,0 +1,15 @@
+.side-bar {
+  /* align-items: center; */
+  display: flex;
+  flex-direction: column;
+  height: 40vh;
+  justify-content: space-around;
+  margin-top: 0px;
+}
+
+.side-bar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import getMusics from '../services/musicsAPI';
-import Header from './Header';
+// import Header from './Header';
 import Loading from './Loading';
 import MusicCard from './MusicCard';
 
@@ -40,16 +40,16 @@ class Album extends React.Component {
     } = this.state;
 
     return load ? <Loading /> : (
-      <div>
-        <Header />
-        <div data-testid="page-album">
+      <div className="album-card">
+        {/* <Header /> */}
+        <div className="artist-name" data-testid="page-album">
           <h1 data-testid="artist-name">{ artistName }</h1>
         </div>
         <div>
           <h1 data-testid="album-name">{ albumName }</h1>
         </div>
         <div>
-          <img src={ albumImage } alt={ albumName } />
+          <img className="album-image" src={ albumImage } alt={ albumName } />
         </div>
         <div>
           { allMusicsAlbum.map((music) => (

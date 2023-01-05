@@ -1,0 +1,80 @@
+/* .inputs {
+  border: 0.5px solid #41197f;
+  border-radius: 5px;
+  box-sizing: border-box;
+  height: 5vh;
+  margin: 5px;
+  width: 30%;
+}
+
+.button {
+  width: 30%;
+  height: 2vg;
+  margin: 5px;
+} */
+
+.login {
+  align-items: center;
+  margin-top: 40 px;
+  background: url('../image/login.png');
+  background-size: cover;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100%;
+}
+
+.login form {
+  align-items:center;
+  background-color: #d87beb;
+  border-radius: 20px;
+  box-shadow: 30px 30px 30px rgba(68, 73, 85, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
+  height: 200px;
+  justify-content: center;
+  width: 300px;
+  color: white;
+  font-size: 20px;
+  /* z-index: 1; */
+  margin-top: 300px;
+  margin-right: 650px;
+}
+
+.login form input {
+  align-items: center;
+  border: black 1px solid;
+  border-radius: 20px;
+  color: #003be5;
+  display: flex;
+  font-size: 14px;
+  height: 40px;
+  justify-content: center;
+  /* margin-top: 1rem; */
+  text-align: center;
+  /* transition: 0.2s; */
+  width: 250px;
+}
+
+::placeholder {
+  color: #0366b6;
+  font-size: 14px;
+  text-align: center;
+}
+
+.login form button {
+  background-color: #000000;
+  border: #ffffff 1px solid;
+  border-radius: 20px;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  height: 30px;
+  transition: 0.2s;
+  width: 80px;
+}
+
+.form button:hover {
+  filter: brightness(200%);
+}

@@ -5,7 +5,8 @@ import { MdFavorite } from 'react-icons/md';
 import { FaUserAlt } from 'react-icons/fa';
 import { getUser } from '../services/userAPI';
 import Loading from './Loading';
-import styles from '../styles/Search.module.css';
+// import styles from '../styles/Search.module.css';
+import './header.css';
 
 class Header extends React.Component {
   constructor() {
@@ -34,7 +35,7 @@ class Header extends React.Component {
       load,
     } = this.state;
     return (
-      <h1 data-testid="header-component">
+      <h1 data-testid="header-component" className="side-bar">
         {/* Header */}
         <Link
           to="/search"
@@ -44,8 +45,6 @@ class Header extends React.Component {
           <HiSearchCircle style={ { fontSize: '30px' } } />
           Pesquisar
         </Link>
-        <br />
-        <br />
         <Link
           to="/favorites"
           style={ { textDecoration: 'none', color: 'black' } }
@@ -54,8 +53,6 @@ class Header extends React.Component {
           <MdFavorite style={ { fontSize: '30px' } } />
           Favoritas
         </Link>
-        <br />
-        <br />
         <Link
           to="/profile"
           style={ { textDecoration: 'none', color: 'black' } }
@@ -64,10 +61,9 @@ class Header extends React.Component {
           <FaUserAlt style={ { fontSize: '28px' } } />
           Perfil
         </Link>
-        <br />
         {
           load ? <Loading />
-            : <p data-testid="header-user-name" className={ styles.pa }>{`${user}`}</p>
+            : <p className="onboarding" data-testid="header-user-name">{`${user}`}</p>
         }
       </h1>
     );

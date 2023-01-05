@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { MdFavorite } from 'react-icons/md';
 import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 import Loading from './Loading';
 
@@ -62,6 +63,7 @@ class MusicCard extends React.Component {
           .
         </audio>
         <label htmlFor={ trackId } data-testid={ `checkbox-music-${trackId}` }>
+          <MdFavorite style={ { fontSize: '20px', color: 'black' } } />
           Favorita
           <input
             type="checkbox"

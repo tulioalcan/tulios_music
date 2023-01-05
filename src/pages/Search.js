@@ -77,59 +77,61 @@ class Search extends React.Component {
       <div
         className="search"
         style={ {
-          display: 'flex',
+          // display: 'flex',
           height: '89vh',
           flexDirection: 'column',
           justifyContent: 'center',
-          // alignItems: 'center',
+          alignItems: 'center',
           background: `url(${search})`,
           backgroundSize: 'cover',
         } }
       >
-        {/* <h1 data-testid="page-search">Conteúdo Search</h1> */}
-        <form>
-          <label htmlFor="artist" className={ styles.label }>
-            <input
-              className={ styles.inputs }
-              data-testid="search-artist-input"
-              name="artist"
-              type="text"
-              id="artist"
-              placeholder="artist"
-              onChange={ this.onInputChange }
-            />
-          </label>
-          <button
-            type="button"
-            data-testid="search-artist-button"
-            disabled={ isButtonDisabled }
-            onClick={ this.clearAndShowSearch }
-          >
-            Pesquisar
-          </button>
-          <section className={ styles.section }>
-            {
-              hasResult && (<h2>{`Resultado de álbuns de: ${artistName}`}</h2>)
-            }
-          </section>
-          <section className={ styles.section2 }>
-            { hasResult ? (
-              albuns.map((albun) => (
-                <div key={ albun.collectionId }>
-                  <img src={ albun.artworkUrl100 } alt={ albun.collectionName } />
-                  {/* <h2>{ albun.collectionName }</h2> */}
-                  {/* <h2>{ albun.artistName }</h2> */}
-                  {/* <h2>{ albun.collectionPrice }</h2> */}
-                  <Link
-                    to={ `/album/${albun.collectionId}` }
-                    data-testid={ `link-to-album-${albun.collectionId}` }
-                  >
-                    select
-                  </Link>
-                </div>
-              ))) : <h2>Nenhum álbum foi encontrado</h2>}
-          </section>
-        </form>
+        <div>
+          {/* <h1 data-testid="page-search">Conteúdo Search</h1> */}
+          <form>
+            <label htmlFor="artist" className={ styles.label }>
+              <input
+                className={ styles.inputs }
+                data-testid="search-artist-input"
+                name="artist"
+                type="text"
+                id="artist"
+                placeholder="artist"
+                onChange={ this.onInputChange }
+              />
+            </label>
+            <button
+              type="button"
+              data-testid="search-artist-button"
+              disabled={ isButtonDisabled }
+              onClick={ this.clearAndShowSearch }
+            >
+              Pesquisar
+            </button>
+            <section className={ styles.section }>
+              {
+                hasResult && (<h2>{`Resultado de álbuns de: ${artistName}`}</h2>)
+              }
+            </section>
+            <section className={ styles.section2 }>
+              { hasResult ? (
+                albuns.map((albun) => (
+                  <div key={ albun.collectionId }>
+                    <img src={ albun.artworkUrl100 } alt={ albun.collectionName } />
+                    <h2>{ albun.collectionName }</h2>
+                    <h2>{ albun.artistName }</h2>
+                    <h2>{ albun.collectionPrice }</h2>
+                    <Link
+                      to={ `/album/${albun.collectionId}` }
+                      data-testid={ `link-to-album-${albun.collectionId}` }
+                    >
+                      select
+                    </Link>
+                  </div>
+                ))) : <h2>Nenhum álbum foi encontrado</h2>}
+            </section>
+          </form>
+        </div>
         <div
           style={ {
             margin: '60px',
