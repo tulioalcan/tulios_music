@@ -1,7 +1,7 @@
 <details>
   <summary><strong>👨‍💻 O que foi desenvolvido</strong></summary><br />
 
-  Projeto criado à parti do projeto TrybeTunes do curso de Desenvolvimento Web da Trybe. Para o projeto foi desenvolvido uma aplicação capaz de reproduzir músicas das mais variadas bandas e artistas, criar uma lista de músicas favoritas e editar o perfil da pessoa usuária logada. Essa aplicação é capaz de:
+  Projeto criado através do projeto TrybeTunes do curso de Desenvolvimento Web da Trybe. Para o projeto foi desenvolvido uma aplicação capaz de reproduzir músicas das mais variadas bandas e artistas, criar uma lista de músicas favoritas e editar o perfil da pessoa usuária logada. Essa aplicação é capaz de:
 
   - Fazer login;
     ![Screenshot](public/examples/login.png)
