@@ -1,13 +1,38 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+<details>
+  <summary><strong>👨‍💻 O que foi desenvolvido</strong></summary><br />
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+  Projeto criado à parti do projeto TrybeTunes do curso de Desenvolvimento Web da Trybe. Para o projeto foi desenvolvido uma aplicação capaz de reproduzir músicas das mais variadas bandas e artistas, criar uma lista de músicas favoritas e editar o perfil da pessoa usuária logada. Essa aplicação é capaz de:
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+  - Fazer login;
+    ![Screenshot](public/examples/login.png)
+  - Pesquisar por uma banda ou artista;
+    ![Screenshot](public/examples/search.png)
+  - Listar os álbuns disponíveis dessa banda ou artista;
+  - Visualizar as músicas de um álbum selecionado;
+    ![Screenshot](public/examples/resultados.png)
+  - Reproduzir uma prévia das músicas deste álbum;
+  - Favoritar e desfavoritar músicas;
+    ![Screenshot](public/examples/reprodu.png)
+  - Ver a lista de músicas favoritas;
+  - Ver o perfil da pessoa logada;
+  - Editar o perfil da pessoa logada;
+
+</details>
+
+<details>
+  <summary><strong>:memo: Habilidades Avalidadas pela Trybe</strong></summary><br />
+
+- Fazer requisições e consumir dados vindos de uma `API`;
+
+- Utilizar os ciclos de vida de um componente React;
+
+- Utilizar a função `setState` de forma a garantir que um determinado código só é executado após o estado ser atualizado
+
+- Utilizar o componente `BrowserRouter` corretamente;
+
+- Criar rotas, mapeando o caminho da URL com o componente correspondente, via `Route`;
+
+- Utilizar o `Switch` do `React Router`
+
+- Criar links de navegação na aplicação com o componente `Link`;
+</details>
